@@ -1,8 +1,8 @@
 
-// const Shows = () => {
-//   return (
-//     <div>Shows</div>
-//   )
-// }
+const Shows = () => {
+  return (
+    <div>Shows</div>
+  )
+}
 
-// export default Shows
+export default Shows
