@@ -5,6 +5,10 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react"
 import App from './App.jsx'
 import './index.css'
 import theme from './theme.js'
+import Home from "./pages/Home.jsx";
+import Movies from "./pages/movies/Movies.jsx";
+import Shows from "./pages/shows/Shows.jsx";
+import Search from "./pages/search/Search.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,19 +17,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div> Home </div>,
+        element: <Home />,
       },
       {
         path: '/movies',
-        element: <div> Movies </div>,
+        element: <Movies />,
       },
       {
-      path: '/shows',
-      element: <div> TV Shows </div>,
+        path: '/shows',
+       element: <Shows />,
       },
       {
-      path: '/search',
-      element: <div> Search </div>,
+       path: '/search',
+      element: <Search />,
       },
     ],
   },
