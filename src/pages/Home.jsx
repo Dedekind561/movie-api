@@ -5,7 +5,7 @@ import CardComponent from "../components/CardComponent";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [timeWindow, setTimeWindow] = useState('day')
+  const [timeWindow, setTimeWindow] = useState("day");
 
   useEffect(() => {
     fetchTrending(timeWindow)
@@ -14,7 +14,7 @@ const Home = () => {
         console.log("Fetched data:", res); // Log the fetched data for debugging
       })
       .catch((err) => {
-        console.error("Error fetching trending movies:", err);
+        console.log(err, "Error fetching trending movies:");
       });
   }, [timeWindow]);
 
@@ -26,12 +26,12 @@ const Home = () => {
       <Heading as="h2" fontSize={"md"} textTransform= {"uppercase"}> 
         Trending 
       </Heading>
-      <Flex alignItems={"center"} gap={"2"} border={"1px solid teal"} borderRadius={"20px"}> 
+      <Flex alignItems={"center"} gap={"2"} border={"1px solid red"} borderRadius={"20px"}> 
         <Box 
           as="button" 
           px="3" py="1" 
           borderRadius={"20px"} 
-          bg={`${timeWindow === 'day' ? "gray.700" : ""}`}
+          bg={`${timeWindow === 'day' ? "gray.600" : ""}`}
           onClick={() => setTimeWindow("day")}
           > 
           Today 
@@ -41,8 +41,9 @@ const Home = () => {
         px="3" 
         py="1" 
         borderRadius={"20px"} 
-        bg={`${timeWindow === 'week' ? "gray.700" : ""}`}
-        onClick={() => setTimeWindow("week")}> 
+        bg={`${timeWindow === 'week' ? "gray.600" : ""}`}
+        onClick={() => setTimeWindow("week")}
+          > 
           This Week 
           </Box>
       </Flex>
