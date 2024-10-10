@@ -5,17 +5,22 @@ import CardComponent from "../components/CardComponent";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [timeWindow, setTimeWindow] = useState("day");
 
   useEffect(() => {
+    setLoading (true);
     fetchTrending(timeWindow)
       .then((res) => {
         setData(res);
-        console.log("Fetched data:", res); // Log the fetched data for debugging
+        console.log("Fetched data:", res); // Logging the fetched data for debugging
       })
       .catch((err) => {
         console.log(err, "Error fetching trending movies:");
-      });
+      })
+      .finally(() => { //after/ when fetch is done
+        setLoading(false);
+      })
   }, [timeWindow]);
 
   console.log(data, 'data');
@@ -49,6 +54,8 @@ const Home = () => {
       </Flex>
       </Flex>
 
+      {/* checking the loading state (slow internet or pagenation req)*/}
+    {loading && <div>Loading...💬</div>} 
       <Grid templateColumns=
       {{ base: "1fr",
         sm: "repeat(2, 1fr)",
