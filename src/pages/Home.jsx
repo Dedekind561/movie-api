@@ -8,16 +8,6 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [timeWindow, setTimeWindow] = useState("day");
   
-  <div id="tags"> 
-  <div className="tag"> Action</div>
-  <div className="tag"> Action</div>
-  <div className="tag"> Action</div>
-  <div className="tag"> Action</div>
-  <div className="tag"> Action</div>
-  <div className="tag"> Action</div>
-
-
-  </div>
 
   useEffect(() => {
     setLoading (true);

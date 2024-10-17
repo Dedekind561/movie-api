@@ -33,7 +33,6 @@ const CardComponent = ({item, type}) => {
             bg="rgba(0,0,0,0.9)" 
             opacity={"0"}
             transition={"opacity 0.3s ease-in-out"}
-           // transform={"translateY(101%)"}  
             > 
             <Text textAlign={"center"}> {item?.title || item?.name} </Text>
             <Text textAlign={"center"} fontSize={"x-small"} color={"yellow.200"}> 
